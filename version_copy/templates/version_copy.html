@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>VERSION COPY AMI</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+
+<script type="text/javascript" src="{{ url_for('static', filename='version_copy.js') }}"></script>
+<!--<script type="text/javascript" src="/static/version_copy.js"></script>-->
+<script type="text/javascript">
+    function on_startup(){
+        "add_rows()";
+    }
+</script>
+
+<!-- Header -->
+<header class="w3-container w3-theme w3-padding" id="myHeader">
+  <div class="w3-center">
+  <h1>Shotgun Version Copy Tool</h1>
+  </div>
+</header>
+
+<!--Version Validation Info-->
+<div>&nbsp;&nbsp;</div>
+<div>&nbsp;&nbsp;</div>
+
+<div class="w3-container">
+    <hr>
+    <div class="w3-center">
+        <h2>Confirm Version Details</h2>
+        <div>&nbsp;&nbsp;</div>
+    </div>
+
+    <div class="w3-responsive w3-card-4">
+        <table class="w3-table w3-striped w3-bordered" id="versionTable">
+            <thead>
+            <tr class="w3-theme">
+                <th scope="col">Version Field</th>
+                <th scope="col">Version Data</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th>Version Name</th>
+                <td>{{ posts.version_data.code }}</td>
+            </tr>
+            <tr>
+                <th>Artist Name</th>
+                <td>{{ posts.version_data.user }}</td>
+            </tr>
+            <tr>
+                <th>Link</th>
+                <td>{{ posts.version_data.entity }}</td>
+            </tr>
+            <tr>
+                <th>Task</th>
+                <td>{{ posts.version_data.sg_task }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ posts.version_data.description }}</td>
+            </tr>
+<!--            <tr>-->
+<!--                <th>thumbnail</th>-->
+<!--                <td>TODO</td>-->
+<!--            </tr>-->
+            <tr hidden>
+                <td id="user_id">{{ posts.user_id }}</td>
+                <td id="project_id">{{ posts.project_id }}</td>
+                <td id="version_id">{{ posts.version_data.id }}</td>
+        </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div>&nbsp;&nbsp;</div>
+<div>&nbsp;&nbsp;</div>
+
+<!--Version copy user input table-->
+<div class="w3-container">
+    <hr>
+    <div class="w3-center">
+        <h2>Where to Copy</h2>
+        <div>&nbsp;&nbsp;</div>
+    </div>
+
+    <div class="set-form">
+        <input type="button" id="moreFields" onclick="add_rows()" value="Add More Copies" class="w3-btn w3-theme" />
+    </div>
+    <div>&nbsp;&nbsp;</div>
+
+    <div class="w3-responsive w3-card-4">
+        <table class="w3-table w3-striped w3-bordered" id="inputTable">
+            <thead>
+            <tr class="w3-theme">
+                <th scope="col">No.</th>
+                <th scope="col">Link</th>
+                <th scope="col">Task</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <script>
+                add_rows();
+            </script>
+            </tbody>
+        </table>
+        <div>&nbsp;&nbsp;</div>
+
+    </div>
+    <div>&nbsp;&nbsp;</div>
+    <div class="set-form">
+        <input type="button" id="submit" onclick="validate_data()" value="Submit" class="w3-btn w3-theme">
+    </div>
+    <div>&nbsp;&nbsp;</div>
+</div>
+<div>&nbsp;&nbsp;</div>
+
+<!--Footer-->
+<hr>
+<footer class="w3-container w3-theme w3-padding">
+    <div class="w3-center">
+  <h5>About</h5>
+  <p class="w3-opacity">If you have any questions, or get an error while using this application, please contact kendyll.hogg@gmail.com.</p>
+    </div>
+</footer>
+</html>

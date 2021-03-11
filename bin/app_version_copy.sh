@@ -1,0 +1,1 @@
+export FLASK_APP=D:\code\git\shotgun_ami\version_copy\version_copy.py && flask run -h 0.0.0.0
